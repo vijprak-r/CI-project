@@ -11,30 +11,30 @@ jobs:
 
     steps:
 
-    - name: Checkout Code
-      uses: actions/checkout@v4
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-    - name: Setup Node
-      uses: actions/setup-node@v4
-      with:
-        node-version: 18
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
 
-    - name: Install Backend Dependencies
-      run: |
-        cd CI-PROJECT/server
-        npm install
+      - name: Install Backend Dependencies
+        run: |
+          cd server
+          npm install
 
-    - name: Run Backend Tests
-      run: |
-        cd CI-PROJECT/server
-        npm test
+      - name: Run Backend Tests
+        run: |
+          cd server
+          npm test
 
-    - name: Install Frontend Dependencies
-      run: |
-        cd CI-PROJECT/client
-        npm install
+      - name: Install Frontend Dependencies
+        run: |
+          cd client
+          npm install
 
-    - name: Build React App
-      run: |
-        cd CI-PROJECT/client
-        npm run build
+      - name: Build React App
+        run: |
+          cd client
+          npm run build
